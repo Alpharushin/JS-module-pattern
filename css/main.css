@@ -1,0 +1,128 @@
+body{
+	background-color: rgba(0, 140, 255, 0.699);
+}
+
+
+.navButton {
+	position: relative;
+	z-index: 40;
+  border-radius: 10px;
+  color: #598428;
+  background: -webkit-linear-gradient(70deg, #C3D600, #C3D600 50%, #A5B400 50%);
+  background: -o-linear-gradient(20deg, #C3D600, #C3D600 50%, #A5B400 50%);
+  background: linear-gradient(20deg, #C3D600, #C3D600 50%, #A5B400 50%);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+.navButton:hover {
+  background: -webkit-linear-gradient(-110deg, #C3D600, #C3D600 50%, #A5B400 50%);
+  background: -o-linear-gradient(-160deg, #C3D600, #C3D600 50%, #A5B400 50%);
+  background: linear-gradient(-160deg, #C3D600, #C3D600 50%, #A5B400 50%);
+}
+
+.navigation{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 5rem 0;
+	margin: 0;
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	z-index: 30;
+	/*display: none;*/
+	list-style: none;
+
+}
+
+.navigation-open:before, .navigation-open:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	background:  rgba(82, 38, 204, 0.432);
+	z-index: 10; 
+
+}
+
+.navigation-open:before{
+	left: 0;
+	-webkit-animation: navanimate 0.5s ease 1 forwards;
+	animation: navanimate 0.5s ease 1 forwards;
+}
+
+.navigation-open:after{
+	right: 0;
+	-webkit-animation: navanimate 0.5s ease 1 forwards;
+	animation: navanimate 0.5s ease 1 forwards;
+}
+
+@-webkit-keyframes navanimate{
+	0%{ width: 0; };
+	50%{ width: 50%; };
+
+}
+
+@keyframes navanimate{
+	0%{ width: 0; };
+	50%{ width: 50%; };
+
+}
+
+.navigation__item {
+	padding: 1.25rem 0;
+	z-index: 40;
+}
+
+.navigation__link {
+	display: inline-block;
+  color: #fff;
+  font-size: 3rem;
+  font-family: "PT Sans", sans-serif, Arial;
+  -webkit-transform: scale(0);
+  transform: scale(0); 
+}
+
+.navigation-open .navigation__link {
+	-webkit-animation: linkbomp 0.5s linear 0.5s forwards;
+	animation: linkbomp 0.5s linear 0.5s forwards;
+}
+
+@-webkit-keyframes linkbomp {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0); 
+	}	
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1); 
+	} 
+}
+
+@keyframes linkbomp {
+	0% {
+			-webkit-transform: scale(0);
+			transform: scale(0); 
+	}
+	
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1); 
+	} 
+}
+
+.hide-scroll {
+	overflow: hidden;
+}
